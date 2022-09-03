@@ -132,11 +132,6 @@ else{
 };
 
 
-// display blog's Q&A
-const showQuestions = ()=>{
-  console.log('blog btn')
-  const accordionContainer = document.getElementById('accordionFlushExample');
-  accordionContainer.classList.remove('d-none')
-};
+
 
 loadAllNews();
