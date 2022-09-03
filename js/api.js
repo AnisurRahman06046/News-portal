@@ -49,7 +49,7 @@ const myfunction = elements=>{
                           <nav class="navbar ">
                             <div class="container">
                                 <a class="navbar-brand" href="#">
-                                 <img src="${element.author.img}" alt="" width="30" height="24"> <span class="fw-bold">${element.author.name}</span>
+                                 <img src="${element.author.img}" alt="" width="30" height="24"> <span class="fw-bold">${element.author?element.author.name:'Not Available'}</span> <span class="fw-bold ms-5 ps-5 text-center">Views: ${element.total_view}</span>
                                  </a>
                                  
   </div>
@@ -64,5 +64,5 @@ const myfunction = elements=>{
 
         
     })
-}
+};
 loadAllNews();
