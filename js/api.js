@@ -62,14 +62,35 @@ const myfunction = elements=>{
                                 <a class="navbar-brand" href="#">
                                  <img src="${element.author.img}" alt="" width="30" height="24"> <span class="fw-bold">${element.author?element.author.name:'Not Available'}</span> <span class="fw-bold ms-5 ps-5 text-center">Views: ${element.total_view}</span>
                                  </a>
-                                 
-  </div>
-</nav>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        
+                                 <!-- Button trigger modal -->
+                                  <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Read More...</button>
+
+                                <!-- Modal -->
+                                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                              ...
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                                                      
+                                        </div>
+                                      </nav>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                              
         `;
         newCardContainer.appendChild(newCardDiv);
 
@@ -87,4 +108,5 @@ const toggleSpinner = isLoading=>{
     loader.classList.add('d-none');
   }
 }
+
 loadAllNews();
