@@ -1,17 +1,27 @@
 const loadAllNews = async()=>{
   const url = 'https://openapi.programming-hero.com/api/news/categories';
-  const res = await fetch(url);
-  const data = await res.json();
-  displayAllNews(data.data.news_category);
+  try{
+    const res = await fetch(url);
+   const data = await res.json();
+    displayAllNews(data.data.news_category);
+  }
+  catch(error){
+    console.log(error)
+  }
 };
 
 const displayAllNews = categories=>{
+  
   const newsCategoryContainer = document.getElementById('news-category-container');
   categories.forEach(category=>{
+    
+    
+    
       const newsCategoryDiv = document.createElement('div');
       newsCategoryDiv.classList.add('col');
       newsCategoryDiv.innerHTML=`
       <a onclick="loadAllNewsId('${category.category_id}')" class="text-decoration-none" href="#">${category.category_name}</a>
+      
      
       `;
       newsCategoryContainer.appendChild(newsCategoryDiv);
@@ -41,6 +51,7 @@ const myfunction = elements=>{
   }
 
   elements.forEach(element=>{
+    
       const newCardDiv = document.createElement('div');
       newCardDiv.classList.add('row');
       
@@ -55,6 +66,7 @@ const myfunction = elements=>{
                       <div class="card-body">
                         <h5 class="card-title">${element.title}</h5>
                         <p class="card-text">${element.details}</p>
+                        
                         
 
                         <nav class="navbar ">
@@ -104,11 +116,13 @@ const myfunction = elements=>{
 const toggleSpinner = isLoading=>{
 const loader = document.getElementById('loader');
 if(isLoading){
-  loader.classList.remove('d-none');
-}
+    loader.classList.remove('d-none');
+  }
 else{
-  loader.classList.add('d-none');
-}
-}
+    loader.classList.add('d-none');
+  }
+};
+
+
 
 loadAllNews();
