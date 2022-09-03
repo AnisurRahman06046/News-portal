@@ -32,6 +32,7 @@ const displayAllNews = categories=>{
 const loadAllNewsId = (id)=>{
   toggleSpinner(true);
   const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
+
   fetch(url)
   .then(res=>res.json())
   .then(data=>myfunction(data.data));
@@ -39,9 +40,11 @@ const loadAllNewsId = (id)=>{
 
 };
 const myfunction = elements=>{
+  
   const newCardContainer = document.getElementById('news-card-container');
   newCardContainer.innerHTML=''
 
+  // empty news text message
   const noNews = document.getElementById('no-news');
   if (elements.length===0){
     noNews.classList.remove('d-none')
@@ -49,6 +52,9 @@ const myfunction = elements=>{
   else{
     noNews.classList.add('d-none')
   }
+  // display found news number 
+  const elementsLength = elements.length;
+  document.getElementById('news-number').innerText = elementsLength;
 
   elements.forEach(element=>{
     
@@ -114,6 +120,7 @@ const myfunction = elements=>{
   toggleSpinner(false);
 };
 
+// spinner function 
 const toggleSpinner = isLoading=>{
 const loader = document.getElementById('loader');
 if(isLoading){
@@ -124,10 +131,12 @@ else{
   }
 };
 
+
+// display blog's Q&A
 const showQuestions = ()=>{
   console.log('blog btn')
   const accordionContainer = document.getElementById('accordionFlushExample');
   accordionContainer.classList.remove('d-none')
-}
+};
 
 loadAllNews();
