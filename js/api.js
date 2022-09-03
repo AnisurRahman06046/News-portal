@@ -1,8 +1,8 @@
-const loadAllNews = ()=>{
+const loadAllNews = async()=>{
     const url = 'https://openapi.programming-hero.com/api/news/categories';
-    fetch(url)
-    .then(res=>res.json())
-    .then(data=>displayAllNews(data.data.news_category))
+    const res = await fetch(url);
+    const data = await res.json();
+    displayAllNews(data.data.news_category)
 };
 
 const displayAllNews = categories=>{
@@ -30,9 +30,19 @@ const loadAllNewsId = (id)=>{
 const myfunction = elements=>{
     const newCardContainer = document.getElementById('news-card-container');
     newCardContainer.innerHTML=''
+
+    const noNews = document.getElementById('no-news');
+    if (elements.length===0){
+      noNews.classList.remove('d-none')
+    }
+    else{
+      noNews.classList.add('d-none')
+    }
+
     elements.forEach(element=>{
         const newCardDiv = document.createElement('div');
         newCardDiv.classList.add('row');
+        
         
         newCardDiv.innerHTML=`
         <div class="card mb-3" >
