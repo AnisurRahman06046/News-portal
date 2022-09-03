@@ -88,6 +88,7 @@ const myfunction = elements=>{
                                           <div class="modal-body">
                                           <h5 class="modal-title" id="exampleModalLabel">${element.author.name}</h5>
                                           <h5 class="modal-title" id="exampleModalLabel">${element.author.published_date}</h5>
+                                          <img class="img-fluid" src="${element.image_url}" alt="">
                                           <h5 class="modal-title" id="exampleModalLabel">${element.details}</h5>
                                           </div>
                                           <div class="modal-footer">
@@ -123,6 +124,10 @@ else{
   }
 };
 
-
+const showQuestions = ()=>{
+  console.log('blog btn')
+  const accordionContainer = document.getElementById('accordionFlushExample');
+  accordionContainer.classList.remove('d-none')
+}
 
 loadAllNews();

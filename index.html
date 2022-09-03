@@ -17,7 +17,7 @@
                   <a class="navbar-brand fw-bold">NEWS 24/7</a>
                   <div class="d-flex">
                     <a class="navbar-brand fw-bold" href="#">News</a>
-                    <a onclick="blogButton()" id="blog-btn" class="navbar-brand fw-bold" href="#">Blog</a>
+                    <a onclick="showQuestions()" id="blog-btn" class="navbar-brand fw-bold" href="#">Blog</a>
                     
                     <a class="fs-2" href=""><i class="fa-solid fa-newspaper"></i></a>
                   </div>
@@ -49,12 +49,47 @@
         </section>
     </header>
     <main>
+      <section class="container w-50">
+        <div  class="accordion accordion-flush d-none" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="fw-bold accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                What are the differences between var,let and const ?
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized.While var and let can be declared without being initialized, const must be initialized during declaration.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="fw-bold accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                what are the differences between arrow function and regular function ?
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">In regular function, you have to use return keyword to return any value. If you don’t return anything then the function will return undefined.Arrow functions behave in the same way when returning values.If the arrow function contains one expression, you can omit the curly braces, and then the expression will be implicitly returned.Regular functions are constructible, they can be called using the new keyword.However, arrow functions can never be used as constructor functions. Hence, they can never be invoked with the new keyword</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button class="fw-bold accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Why do we use template string ?
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements. Another great thing that comes with template strings are tags. Tags are functions that take a string and the decomposed parts of the string as parameters and are great for converting strings to different entities.</div>
+            </div>
+          </div>
+        </div>
+      </section>
         
         <section class="container mx-auto mt-5 ">
             <div id="news-card-container" >
                 
             </div>
         </section>
+        
 
         
         
